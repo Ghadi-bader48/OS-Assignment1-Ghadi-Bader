@@ -1,28 +1,5 @@
 # 📝 MY_WORK: Student Information, Development Log, Reflection & Answers
 
-> This is the **only file** your instructor reads to grade Parts 3 and 4 (documentation and video). Everything you write here must be **in your own words**.
-
----
-
-## 🛑 STOP: Read This Before You Do Anything Else
-
-> ### 1️⃣ Read the whole `README.md` first
-> The `README.md` in this repository contains the full instructions: class descriptions, feature specifications, question prompts and the video script. **If you skip it, you will lose marks.**
->
-> ### 2️⃣ Understand the full code before answering any question
-> Open `SchedulerSimulation.java` and read it **from top to bottom**. You must be able to explain what `Process`, `run()`, `runToCompletion()`, `addProcessToQueue()`, `Thread.start()`, `Thread.join()` and `Thread.sleep()` do **before** you write a single answer in Parts B and C. Run the program at least once and watch the output.
->
-> ### 3️⃣ Commit many times, not once
-> A single commit, or all commits made in the last hour, costs you **-0.5 mark**. See the [Commit Rules](#-commit-rules-mandatory) below.
-
-**How to use this file:**
-1. Fill in your **Student Information** (below) right now.
-2. Follow the steps in the **Work Roadmap** in order.
-3. Update the **Development Log** *every time* you work on the assignment, not at the end.
-4. Do not delete any section header. Replace the `[...]` placeholders with your own text.
-
----
-
 ## 👤 Student Information
 
 | Field | Your Answer |
@@ -65,6 +42,7 @@
 | 4 | `Feature 3: Added waiting time tracking and summary table` |
 | 5 | `Docs: Added development log` |
 | 6 | `Docs: Completed reflection and technical answers` |
+| 7 | `Docs: Revised my answers` |
 ---
 
 # Part A: Development Log (0.5 mark)
@@ -175,23 +153,24 @@
 ## Question 1: What did you learn about multithreading?
 
 **Your Answer:** 
-I learned that a Java class implementing `Runnable` can be executed by a `Thread`. In my simulation, the `Process` class represents a task, and `addProcessToQueue()` creates a thread for each CPU turn. `Thread.start()` starts the thread, while `Thread.join()` makes the main scheduler wait until that thread finishes. `Thread.sleep()` simulates the duration of CPU execution, although the sleeping thread is not actually using the CPU during that delay. If a process still has remaining burst time, it returns to the ready queue and receives another thread for its next turn. My output showed that P2 needed three execution turns to complete its 10,883 ms burst time.
+I learned that a Java class implementing Runnable can be executed by a Thread. The Process class represents a task, and addProcessToQueue() methods creates a thread for each CPU turn. Thread.start() starts the thread, then Thread.join() method is used to wait for the thread to finish. Thread.sleep() method is used to make the thread  sleep, the time equals the time of the CPU execution . If a process still has remaining burst time, it returns to the ready queue and receives another thread for its next turn. In my test P2 needed three execution turns to complete its 10,883 ms burst time.
+
 
 ## Question 2: What was the most challenging part of this assignment?
 
 **Your Answer:** 
-The most challenging part was calculating the total waiting time of each process. A process can return to the ready queue several times, so measuring only its first waiting period would give the wrong result. I needed to record when each process entered the queue and when its next execution started. For example, P2 was re-queued twice because its burst time was 10,883 ms and the quantum was 5,000 ms. Its final waiting time in my output was 71,740 ms, which includes the time spent waiting for its different turns. I also had to ensure that collecting these measurements did not change the FIFO scheduling order.
+It was calculating the total waiting time of each process, beacuse a process can return to the ready queue several times, so to get the waiting time correct I neeed to summ all of its waiting times.I record when each process entered the queue and when its next execution started. In my test P2 was re-queued twice because its burst time was 10,883 ms and the quantum was 5,000 ms. The final waiting time (71,740 ms) was the sum of all time spent waiting for its different turns. I also had to ensure that collecting these measurements did not change the FIFO scheduling order.
 
 ## Question 3: How did you overcome the challenges you faced?
 
 **Your Answer:**
-I checked where the program inserts a process into the queue and where the scheduler starts its thread. I used `markQueued()` to save the queue-entry timestamp with `System.currentTimeMillis()`. I used `markStarted()` to add the elapsed queue-waiting time to the process's previous total. This allows the same process to accumulate waiting time across several rounds. I verified the calculations by checking the final table, including P2, where 71,740 ms of waiting plus 10,883 ms of burst time equals 82,623 ms of turnaround time. I also checked that processes continued to run in FIFO order even when their displayed priorities were different.
+I saved the time at which the program inserts a process into the queue and when the scheduler starts its thread.I used markQueued() method to save the timestamp at which the process is inserted to the queue using the System.currentTimeMillis() methond, After that  markStarted() was used to add the elapsed queue-waiting time to the process's previous total. This sum's up all the waiting time across for all rounds. I Finally verified the calculations by checking the final output, for P2 71,740 ms of WT + 10,883 ms BT = 82,623 ms TT.
 
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
 **Your Answer:** 
- Multithreading helps applications manage multiple tasks while keeping the system responsive. For example, an operating system may share CPU time among runnable threads using time slices. A browser can run background tasks while keeping its interface responsive. A server can also use worker threads to handle requests from different users. My simulation uses a 5,000 ms quantum to show how unfinished tasks can return to a ready queue. The same idea of dividing work into turns can help prevent a long-running task from blocking all other ready tasks.
+ Multithreading helps applications manage multiple tasks while keeping the system responsive. For example,Operating system share CPU time among runnable threads using time slices. A browser can run background tasks while keeping its interface responsive. A server use worker threads to handle requests from different users at the same time. In my test 5,000 ms quantum is used to show how unfinished tasks can return to a ready queue. This demonstrate the idea of dividing work into turns to prevent a long-running task from blocking all other ready tasks.
 
 ### Optional: What would you like to learn more about?
 
@@ -213,14 +192,14 @@ None.
 **Question**: Explain the difference between a **thread** and a **process**. Why did we use threads in this assignment instead of creating separate processes? Mention at least **TWO** specific differences (e.g., memory sharing, creation overhead, communication speed), and reference relevant parts of `SchedulerSimulation.java`.
 
 **Your Answer:**
-A process is an executing program with its own memory space, while a thread is an execution unit within a process. Threads in the same Java program can share objects directly, whereas separate processes normally require inter-process communication to exchange data. Creating and coordinating threads is generally less expensive than creating separate operating-system processes. In `SchedulerSimulation.java`, the `Process` class models a process, but `new Thread(process)` creates a real Java thread to execute it without launching a separate program.
+A process is an independent program running in its own isolated memory space, while a thread is a smaller path of execution living inside a process that shares memory with other threads. This memory sharing makes threads much faster to create and communicate with because they don't require heavy operating system overhead. In our SchedulerSimulation.java file, the Process class acts as our data model for a task, but we use new Thread(process) to actually create a real Java thread to execute that task's run method concurrently.
 
 ## Question 2: Ready Queue Behavior
 
 **Question**: In Round-Robin scheduling, what happens when a process doesn't finish within its time quantum? Explain using an example from **your** program output, including **how many times that process was re-queued** before it finished, and explain why re-queueing matters for fairness.
 
 **Your Answer:** 
-The simulation uses a 5,000 ms time quantum for 11 processes. P2 has a burst time of 10,883 ms and priority 3, so it runs for 5,000 ms in its first turn and another 5,000 ms in its second turn. It is added back to the FIFO ready queue **two times after its initial entry**, then finishes during a third turn of 883 ms. Re-queueing gives the other waiting processes a chance to run instead of allowing P2 to hold the simulated CPU until it finishes.
+When a process doesn't finish within the 5,000 ms time quantum, the scheduler interrupts it, removes it from the CPU, and appends it to the back of the FIFO ready queue. In my test, P2 had a burst time of 10,883 ms, so it ran for 5,000 ms, yielded, ran for another 5,000 ms, yielded again, and finished on its third turn. So it was re-queued exactly two times after its initial entry. Re-queueing is vital for fairness because it prevents long, CPU-heavy processes from starving shorter tasks of execution time.
 
 
 Example from my output:
@@ -248,15 +227,15 @@ The initial queue entry is not counted as a re-queue. The two later `added to re
 
 **Your Answer:** 
 
-1. **New:** The scheduler creates P1's Java thread with `new Thread(process)` in `addProcessToQueue()`, but the thread has not been started.
+1. **New:** The scheduler creates P1's Java thread with new Thread(process) in addProcessToQueue() method, but the thread has not been started.
 
-2. **Runnable:** Calling `currentThread.start()` makes P1's thread eligible to execute; Java officially uses `RUNNABLE` for both ready-to-run and running threads.
+2. **Runnable:** Calling currentThread.start() makes P1's thread ready to execute; Java officially uses RUNNABLE for both ready-to-run and running threads.
 
-3. **Running:** When the JVM schedules P1, its `run()` method executes the first 5,000 ms simulated time slice.
+3. **Running:** When the JVM schedules P1, its run() method executes the first 5,000 ms simulated time slice.
 
-4. **Waiting:** During each `Thread.sleep(stepTime)`, P1's thread enters the Java `TIMED_WAITING` state, while the **main scheduler thread** waits for P1 using `currentThread.join()`.
+4. **Waiting:** During each Thread.sleep(stepTime), P1's thread enters the Java TIMED_WAITING state, while the main scheduler thread waits for P1 using currentThread.join().
 
-5. **Terminated:** P1's thread terminates when its `run()` method returns, and because 370 ms remains, the scheduler creates a **new thread** for P1's second and final 370 ms turn.
+5. **Terminated:** P1's thread terminates when its run() method returns, and because 370 ms remains, the scheduler creates a new thread for P1's second and final 370 ms turn.
 
 ## Question 4: Real-World Applications
 
