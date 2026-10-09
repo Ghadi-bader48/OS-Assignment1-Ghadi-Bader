@@ -25,15 +25,13 @@
 
 ## 👤 Student Information
 
-> ⚠️ **WARNING:** Fill this in first. Your name and ID must match the student ID you set in `SchedulerSimulation.java` (line 150) and the one you say in your video.
-
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
-| **Repository Link** | [Paste your repository link here] |
+| **Full Name** | Ghadi Bader |
+| **Student ID** | 446051748 |
+| **University Email** | 446051748@std.psau.edu.sa |
+| **GitHub Username** | Ghadi-bader48 |
+| **Repository Link** | https://github.com/Ghadi-bader48/OS-Assignment1-Ghadi-Bader |
  
 ---
 
@@ -41,156 +39,120 @@
 
 **Video Link**: [Paste your video link here]
 
-> ⚠️ **WARNING:** The video must be **publicly accessible** ("Anyone with the link can view") on **Google Drive**, **YouTube (Unlisted or Public)** or any other cloud file-sharing system. A private, restricted or broken link counts as a **missing video (-1 mark)**.
->
-> 💡 **TIP:** Open the link in a **private/incognito window** before you submit. If it asks you to log in or request access, it is not public.
->
-> 📌 **NOTE:** The link goes in **this file only** (`MY_WORK.md`), **not** in `README.md`. Name your video file `StudentID_Assignment1_Demo.mp4`. It must last **2 to 3 minutes**.
-
 ---
 
 ## 🗺️ Work Roadmap (follow in this order)
 
-| Step | What to do | Where | Marks |
-|:----:|------------|-------|:-----:|
-| 0 | Read `README.md`, then read and run the full code | Your IDE | – |
-| 1 | Fork, rename, keep the repo **PUBLIC**, set your student ID (line 150), **commit** | GitHub + code | Part 1 (1) |
-| 2 | Feature 1: Process Priority, **commit** | Code | Part 2 (0.25) |
-| 3 | Feature 2: Context Switch Counter, **commit** | Code | Part 2 (0.25) |
-| 4 | Feature 3: Waiting Time Tracking, **commit** | Code | Part 2 (0.5) |
-| 5 | Development Log (5+ entries, different dates) | This file, Part A | Part 3 (0.5) |
-| 6 | Reflection (4 questions) | This file, Part B | Part 3 (0.5) |
-| 7 | Technical Answers (4 questions) | This file, Part C | Part 3 (0.5) |
-| 8 | Record the video, upload it, paste the link above | Video + this file | Part 4 (1.5) |
-| 9 | Final check, then submit the repo link on Blackboard | Blackboard | – |
-
-> 💡 **TIP:** Tick each step off as you go. Do not leave the log, the reflection or the video for the last day.
-
+| Step | Task | Status (mark when done) |
+|---|---|---|
+| 0 | Read README and run original starter | Completed on October 9, 2026 2:00 pm |
+| 1 | Fork starter, set ID, commit and push | Completed on October 9, 2026 4:43 pm |
+| 2 | Add display priority and commit | Completed on October 9, 2026 4:56 pm |
+| 3 | Add context switch counter and commit | Completed on October 9, 2026 6:24 pm |
+| 4 | Add waiting/turnaround summary and commit | Completed on October 9, 2026 8:58 pm |
+| 5 | Write five log entries | Completed on October 9, 2026 9:40 pm |
 ---
 
 ## 🔁 Commit Rules (MANDATORY)
 
-> ### ⚠️ MANY COMMITS ARE REQUIRED. A single bulk commit is penalized (-0.5 mark).
-
-**Minimum: 3 meaningful commits. Aim for 6 or more.**
-
-| # | Commit | Example message |
-|:-:|--------|-----------------|
-| 1 | Student ID set | `Set my student ID: 441234567` |
-| 2 | Feature 1: Priority | `Feature 1: Added priority field to Process class` |
-| 3 | Feature 2: Context switches | `Feature 2: Implemented context switch counter` |
-| 4 | Feature 3: Waiting time | `Feature 3: Added waiting time tracking and summary table` |
-| 5 | Development log entries | `Docs: Added development log entries 1-3` |
-| 6 | Reflection and answers | `Docs: Completed reflection and technical answers` |
-| 7 | Video link | `Docs: Added demo video link` |
-
-**Rules:**
-- ✅ **One commit per feature.** Do not put all three features in one commit.
-- ✅ **Commit after each work session**, and after each part of this file.
-- ✅ **Spread your commits over different dates.** Not all in one day.
-- ❌ **Do not make all commits in the last hour** before the deadline.
-- ❌ **No vague messages** like `done`, `update` or `final version`.
-
-> 💡 **TIP:** Your commit history is checked and you **show it in your video** (at least 3 commits visible). Your development log dates should match your commit dates.
->
-> 💡 **TIP:** **Use VS Code** (see *Recommended Development Environment* in `README.md` for the full setup). Sign in to GitHub in VS Code, then commit from the Source Control panel (Ctrl+Shift+G) → stage → write a message → Commit → Sync/Push. You can edit and commit this file the same way. **Pushing** matters: commits that are not pushed to GitHub are invisible to the instructor.
+| Commit | Message |
+|---|---|
+| 1 | `Set my student ID: 446051748` |
+| 2 | `Feature 1: Added priority field to Process class` |
+| 3 | `Feature 2: Implemented context switch counter` |
+| 4 | `Feature 3: Added waiting time tracking and summary table` |
+| 5 | `Docs: Added development log` |
 
 ---
 
 # Part A: Development Log (0.5 mark)
 
-> ⚠️ **WARNING:** Minimum **5 entries**, spread over **different dates**. Five entries written on the same day, or written all at once at the end, will lose marks and look like a copy. Entry dates should be **between the start of the assignment and the deadline (October 10, 2026)**.
->
-> 💡 **TIP:** Write an entry at the **end of each work session**, while you still remember what happened. It takes 5 minutes.
->
-> 💡 **TIP:** Be specific. "Worked on the code" is a weak entry. "Added a `static int contextSwitches` counter and incremented it before `currentThread.start()`" is a strong one.
->
-> 📌 **NOTE:** Each entry needs: date and time, what you did, details, challenges, solution, and time spent. Real challenges are fine (and expected). Do not invent fake ones.
-
-## Example Entry (do not copy it, write your own)
-
-### Entry 1 - [September 22, 2026, 2:30 PM]
-**What I did**: Forked the repository and set up my student ID
-
-**Details**:
-- Created GitHub account with university email
-- Forked the starter repository and renamed it
-- Changed student ID on line 150 to my actual ID (441234567)
-- Compiled and ran the program successfully
-- Committed and pushed: `Set my student ID: 441234567`
-
-**Challenges**: Had to install JDK first because `javac` wasn't recognized
-
-**Solution**: Downloaded JDK 17 and set the PATH variable
-
-**Time spent**: 30 minutes
-
----
-
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - October 9, 2026, [4:43 pm]
+**What I did**: Prepared my GitHub repository and set my student ID.
 
 **Details**:
+- Forked the official starter repository under `Ghadi-bader48` and named it `OS-Assignment1-Ghadi-Bader`.
+- Cloned the public fork into VS Code and configured my Git identity.
+- Replaced the student ID with `446051748` in `SchedulerSimulation.java`.
+- Committed and pushed `Set my student ID: 446051748`.
 
-**Challenges**:
+**Challenges**: GitHub initially rejected a push with HTTP error 403.
 
-**Solution**:
+**Solution**: Checked GitHub authentication and repository access, then completed the push using the correct account.
 
-**Time spent**:
+**Time spent**: [10 min]
 
 ---
 
-### Entry 2 - [Date and Time]
-**What I did**:
+### Entry 2 - October 9, 2026, [4:56 pm]
+**What I did**: Added process priorities.
 
 **Details**:
+- Added the `priority` field and getter to the `Process` class.
+- Generated priority values from 1 to 10 using `1 + random.nextInt(10)`.
+- Updated `addProcessToQueue()` to display the priority when a process enters the ready queue.
+- Kept the queue in FIFO order; priority affects display only.
+- Committed and pushed `Feature 1: Added priority field to Process class`.
 
-**Challenges**:
+**Challenges**: I needed to keep the new priority value separate from scheduling decisions.
 
-**Solution**:
+**Solution**: Left the FIFO queue and scheduler selection unchanged and used priority only in the printed queue message.
 
-**Time spent**:
+**Time spent**: [13 min]
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
+### Entry 3 - October 9, 2026, [6:24 pm]
+**What I did**: Added context-switch counting.
 
 **Details**:
+- Added `private static int contextSwitches = 0` in `SchedulerSimulation`.
+- Incremented the counter before each `currentThread.start()` in the scheduler loop.
+- Printed `Total context switches` after the scheduling loop.
+- Committed and pushed `Feature 2: Implemented context switch counter`.
 
-**Challenges**:
+**Challenges**: I needed to count scheduler dispatches instead of the number of times a process was placed in the queue.
 
-**Solution**:
+**Solution**: Incremented the counter at the point where a process thread actually starts running.
 
-**Time spent**:
+**Time spent**: [15 min]
 
 ---
 
-### Entry 4 - [Date and Time]
-**What I did**:
+### Entry 4 - October 9, 2026, [8:58 pm]
+**What I did**: Added waiting-time tracking and the final summary table.
 
 **Details**:
+- Used `System.currentTimeMillis()` in `markQueued()` and `markStarted()`.
+- Added each completed queue-wait interval to the process's accumulated waiting time.
+- Stored all processes in an `allProcesses` list for the final report.
+- Printed process name, burst time, waiting time, and turnaround time, with turnaround calculated as waiting plus burst.
+- Committed and pushed `Feature 3: Added waiting time tracking and summary table`.
 
-**Challenges**:
+**Challenges**: A process can be re-queued, so its total waiting time must include more than one queue interval.
 
-**Solution**:
+**Solution**: Recorded a new timestamp on each queue entry and accumulated the delay at each dispatch.
 
-**Time spent**:
+**Time spent**: [20 min]
 
 ---
 
-### Entry 5 - [Date and Time]
-**What I did**:
+### Entry 5 - October 9, 2026, [9:40 pm]
+**What I did**: Reviewed my code commits and worked on the assignment documentation.
 
 **Details**:
+- Checked  that the feature commits were visible in my public GitHub repository.
+- Reviewed the `Process` class, scheduler loop, and summary table.
+- Added the development log with information about each implemented feature.
+- Checked that the technical descriptions matched the code and the fixed seed for my student ID.
 
-**Challenges**:
+**Challenges**: I needed to connect the written explanations to the exact methods used in the program.
 
-**Solution**:
+**Solution**: Reviewed `addProcessToQueue()`, the thread scheduling loop, and `markQueued()` / `markStarted()` while writing the log.
 
-**Time spent**:
+**Time spent**: [30 min]
 
 ---
 
