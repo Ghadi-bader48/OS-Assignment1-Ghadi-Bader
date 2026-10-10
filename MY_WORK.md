@@ -14,7 +14,7 @@
 
 ## 🎥 Video Link
 
-**Video Link**: [Paste your video link here]
+**Video Link**: https://drive.google.com/file/d/1OccHzzWQXvVZ2cNtRPfIqslGs_iGuSQX/view?usp=drivesdk
 
 ---
 
@@ -29,7 +29,7 @@
 | 4 | Add waiting/turnaround summary and commit | Completed on October 9, 2026 8:58 pm |
 | 5 | Write five log entries | Completed on October 9, 2026 9:40 pm |
 | 6 | Write reflection in my own words | Completed on October 9, 2026 10:10 pm   |
-| 7 | Upload demo video and add  link |   |
+| 7 | Upload demo video and add  link |  Completed on October 10, 2026 6:00 pm  |
 ---
 
 ## 🔁 Commit Rules (MANDATORY)
@@ -43,6 +43,7 @@
 | 5 | `Docs: Added development log` |
 | 6 | `Docs: Completed reflection and technical answers` |
 | 7 | `Docs: Revised my answers` |
+| 8 | `Docs: Added demo video link` |
 ---
 
 # Part A: Development Log (0.5 mark)
@@ -139,13 +140,13 @@
 
 ## Development Log Summary
 
-**Total time spent on assignment**: [2 hrs]
+**Total time spent on assignment**: [3 hrs]
 
 **Most challenging part**: Tracking waiting time over repeated entries to the ready queue while keeping the Round-Robin scheduling logic unchanged.
 
 **Most interesting learning**: How `Thread.start()`, `Thread.join()`, and the FIFO queue work together to execute processes in time slices.
 
-**What I would do differently next time**: Test and document each change immediately after completing it, including the exact output used in the technical answers.
+**What I would do differently next time**: Test and document each change immediately after completing it,including the exact output used in the technical answers.
 ---
 
 # Part B: Reflection (0.5 mark)
